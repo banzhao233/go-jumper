@@ -5,7 +5,7 @@ $(document).ready(()=>{
             try {
                 if(!data instanceof Object)data = JSON.parse(data);
                 if(window.location.hash===""){
-                    document.getElementsByClassName("loading-text")[0].innerHTML = "链接参数错误，将跳转至"+data.backTo.sitename+"<dot>...</dot>"
+                    document.getElementsByClassName("loading-text")[0].innerHTML = "进不去，回来"+data.backTo.sitename+"<dot>吧你</dot>"
                     setTimeout(()=>{
                         window.location.href = data.backTo.url;
                     },5000)
@@ -32,7 +32,7 @@ $(document).ready(()=>{
                         return
                     }
                     setTimeout(function(){
-                        window.location.href = link
+                        window.location.href = "https://banzhao233.github.io/"
                     },3000)
                 }
             } catch (error) {
@@ -50,18 +50,18 @@ function popUpWarning(config,link){
     console.log("popUp")
     swal.fire({
         title: "确定访问？",
-        text: "该网址不属于"+config.sitename+"，\n你确定要打开"+link+"吗？",
+        text: "这链接不归我管"+config.sitename+"，\n你确定要打开"+link+"吗？",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+        confirmButtonText: "让我访问！",
+        cancelButtonText: "いいえいいえ",
       }).then(function(isConfirm){
         console.log(isConfirm)
         if (isConfirm.value) {
             console.log('setTimeout')
             setTimeout(function(){
-                window.location.href = link
+                window.location.href = "https://banzhao233.github.io/"
             },3000)
         }    
         else {
